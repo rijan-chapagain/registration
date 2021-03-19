@@ -14,39 +14,30 @@
 
 Registration Registration::R()
 {
-    std::cout << "Inside regist getCredits..." << std::endl;
     count = 0;
 }
 
 const unsigned Registration::GetCredits()
 {
-    std::cout << "Inside regist getCredits..." << std::endl;
     unsigned sum = 0;
     for(unsigned i = 0; i < count; i++)
         sum += unit[i].GetCredits();
 
     return sum;
 }
-/*
-const unsigned Registration::GetCount() {
 
-}
-*/
 std::istream & operator >>(std::istream & input, Registration & R)
 {
-    std::cout << "Inside regist input stream..." << std::endl;
     input >> R.studentID >> R.semester >> R.count;
 
       for(unsigned i = 0; i < R.count; i++)
-        input >> R.unit[i];  // track down which >> operator is called. Hint: look at what is being input.
+        input >> R.unit[i];
 
       return input;
 }
 
 std::ostream & operator <<(std::ostream & os, const Registration & R)
 {
-    std::cout << "reg os..." << std::endl;
-
     os << "Student ID: " << R.studentID << '\n'
          << "Semester:   " << R.semester << '\n';
 
