@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1616151194 source:c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\src\result.cpp
+	"Result.h"
+
+1616147193 c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\include\result.h
+	<iostream>
+	"Unit.h"
+
+1616152008 c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\include\unit.h
+	<iostream>
+	<string.h>
+
+1616153022 source:c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\src\main.cpp
+	<iostream>
+	<fstream>
+	"Unit.h"
+	"Registration.h"
+
+1616140252 c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\include\registration.h
+	<iostream>
+	"Unit.h"
+
+1616151163 source:c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\src\registration.cpp
+	"Registration.h"
+
+1616153079 source:c:\users\hrijo\onedrive - murdoch university\2021_s1\ict283\lab\registration\src\unit.cpp
+	"Unit.h"
+
