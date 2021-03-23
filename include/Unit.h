@@ -15,35 +15,70 @@
 #include <iostream>
 #include <string.h>
 
-const unsigned UnitNameSize = 10;
-const unsigned uId = 6;
+class Units {
 
-class Unit {
 public:
-	Unit();
-	Unit(char * unitName, char * unitID, unsigned cred);
-	const char * GetUnitName();
-	const char * GetUnitID();
-	const unsigned GetCredits();
-	void SetUnitName(char * name);
-	void SetUnitID(char * id);
-	void SetCredits(unsigned cred);
-	friend std::ostream & operator <<(std::ostream & os, const Unit & unit);
-	friend std::istream & operator >>(std::istream & is, Unit & unit);
+
+    Units();
+
+    void SetCredits(unsigned&);
+    unsigned int GetCredits() const;
+
+    // ID unit
+    void SetID_Unit(std::string&);
+    std::string GetIDUnit() const;
+
+    // name
+    void SetName(std::string& inputName);
+    std::string GetName() const;
+
+
+    void CleanTheString(std::string& , const std::string& , const std::string& );
+    ReArrangeStringWithUnitID(std::string&, std::string&);
+    int isCapital(char x);
+
+
+
 private:
-	char uName[UnitNameSize];
-	char uID[uId];
-	int credits;
+
+    std::string name;                 // unit name, C style string. not a C++ string object
+    std::string  ID_Unit;       // unit id type integer
+    unsigned int  credits;       // number of credits
+
 };
 
-inline const unsigned Unit::GetCredits()
+
+inline void Units::SetCredits(unsigned &creditsInput)
 {
-  return credits;
+    credits = creditsInput;
+
 }
 
-inline void Unit::SetCredits( unsigned cred )
+inline unsigned Units::GetCredits() const
 {
-  credits = cred;
+    /// PostCondition: return credits
+    return credits;
 }
 
+inline void Units::SetID_Unit(std::string &idUnit)
+{
+    ID_Unit = idUnit;
+}
+
+inline std::string Units::GetIDUnit() const
+{
+    /// PostCondition: return ID_Unit
+    return ID_Unit;
+}
+
+inline void Units::SetName(std::string& inputName){
+
+    name = inputName;
+}
+
+inline std::string Units::GetName() const
+{
+    /// PostCondition: return name
+    return name;
+}
 #endif  //_UNIT_H
