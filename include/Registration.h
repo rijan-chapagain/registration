@@ -15,26 +15,71 @@
 
 #include <iostream>
 #include "Unit.h"
+#include "Result.h"
 
-const unsigned MaxUnit = 10;
+const unsigned maxNo = 10;
 
 class Registration {
+
 public:
-	Registration R();
+
+	Registration();
+
 	const unsigned GetCredits();
+
 	const unsigned GetCount();
-	friend std::ostream & operator <<(std::ostream & os, const Registration & R);
-	friend std::istream & operator >>(std::istream & is, Registration & R);
+    void SetCount(unsigned&);
+
+    unsigned long GetStudentId() const;
+    void SetStudentId(unsigned long&);
+
+    unsigned GetSemesters() const;
+    void SetSemesters(unsigned&);
+
+    void GetRegistrationInfoFromFile(std::ifstream &fileInputToRead);
+    void SetRegistrationInfoToFile(std::ofstream &fileOutput);
+
 private:
-	long studentID;
+
+	unsigned long studentId;
 	unsigned semester;
-	unsigned count; // number of results
-	Unit unit[MaxUnit]; //array of units
+	unsigned count;
+	Result results[maxNo]; //array of results
+	Units units[maxNo];
 };
 
 inline const unsigned Registration::GetCount()
 {
-  return count;
+    /// PostCondition: return count for the number units
+    return count;
+}
+
+
+inline void Registration::SetCount(unsigned& ct)
+{
+    count = ct;
+}
+
+inline unsigned long Registration::GetStudentId() const
+{
+    /// PostCondition: return studentId
+    return studentId;
+}
+
+inline void Registration::SetStudentId(unsigned long& id)
+{
+    studentId = id;
+}
+
+inline unsigned int Registration::GetSemesters() const
+{
+    /// PostCondition: return semester
+    return semester;
+}
+
+inline void Registration::SetSemesters(unsigned& sems) {
+
+    semester = sems;
 }
 
 #endif  //_REGISTRATION_H

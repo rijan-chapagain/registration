@@ -11,8 +11,10 @@
 
 
 #include "Registration.h"
+#include <iostream>
+#include <fstream>
 
-Registration Registration::R()
+Registration::Registration()
 {
     count = 0;
 }
@@ -20,32 +22,54 @@ Registration Registration::R()
 const unsigned Registration::GetCredits()
 {
     unsigned sum = 0;
+    int count = GetCount();
     for(unsigned i = 0; i < count; i++)
-        sum += unit[i].GetCredits();
+        sum += results[i].GetCredits(i);
 
     return sum;
 }
 
-std::istream & operator >>(std::istream & input, Registration & R)
+void Registration::GetRegistrationInfoFromFile(std::ifstream &fileInputToRead)
 {
-    input >> R.studentID >> R.semester >> R.count;
+    std::string name;
+    std::string month;
+    unsigned long sId;
+    unsigned noOfSemester;
+    unsigned noOfCount;
+    std::string idUnit;
+    unsigned credits;
+    unsigned marks;
+    unsigned day;
+    unsigned year;
 
-      for(unsigned i = 0; i < R.count; i++)
-        input >> R.unit[i];
+    while(fileInputToRead >> sId >> noOfSemester >> noOfCount)
+    {
+        SetStudentId(sId);
+        SetSemesters(noOfSemester);
+        SetCount(noOfCount);
 
-      return input;
+        for(int resultIndex =0; resultIndex < GetCount(); resultIndex++)
+        {
+            fileInputToRead >> name >> idUnit >> credits >> marks >> day >> month >> year;
+            results[resultIndex].GetResultsInfo(
+                    resultIndex, name, idUnit, credits, marks, day, month, year);
+        }
+
+    }
+
 }
 
-std::ostream & operator <<(std::ostream & os, const Registration & R)
+void Registration::SetRegistrationInfoToFile(std::ofstream &fileOutput)
 {
-    os << "Student ID: " << R.studentID << '\n'
-         << "Semester:   " << R.semester << '\n';
+    fileOutput << "Student ID: " << GetStudentId() << '\n' << "Semesters: " << GetSemesters() << std::endl;
 
-      for(unsigned i = 0; i < R.count; i++)
-        os << R.unit[i] << '\n';
 
-      return os;
+    for( int resultsIndex =0; resultsIndex < GetCount(); resultsIndex++)
+    {
+        results[resultsIndex].SetResultsInfo(fileOutput, resultsIndex);
+    }
+
+    fileOutput << "Number Of Units: " << GetCount() << std::endl;
+    fileOutput << "Total Credits: " << GetCredits() << std::endl;
+
 }
-
-
-

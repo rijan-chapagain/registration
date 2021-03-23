@@ -12,55 +12,54 @@
 
 #include "Unit.h"
 
-Unit::Unit()
+Units::Units() = default;
+
+void Units::CleanTheString(std::string& inputStr, const std::string &thisStr, const std::string &toBeReplaced)
 {
-    uName[0] = '\0';
-    uID[0] = '\6';
+
+    unsigned long pos=0;
+
+    unsigned long thisStrLen = thisStr.length();
+    unsigned long replacingStrLen = toBeReplaced.length();
+
+//    for(unsigned i=0; i < inputStr.length(); i++){
+//        if(isCapital(inputStr[i]))
+//        {
+//            inputStr.append(inputStr, i, 1);
+//
+//        }
+//    }
+
+    while((pos = inputStr.find(toBeReplaced, pos)) != -1)
+    {
+        inputStr.replace(pos, replacingStrLen, thisStr);
+        // increment the position replaced
+        pos += thisStrLen;
+    }
+
 }
 
-Unit::Unit(char * unitName, char * unitID, unsigned cred)
+
+Units::ReArrangeStringWithUnitID(std::string& name, std::string& unitId)
 {
-    strncpy( unitName, uName, UnitNameSize );
-    strncpy( unitID, uID, 6 );
-    credits = cred;
-}
 
-const char * Unit::GetUnitName() {
+    std::string alteredUnitName;
+    std::string alteredUnitID;
 
-}
+    alteredUnitID = name.substr(0,3) + unitId;
+    alteredUnitName = name.substr(4, name.length() -1);
 
-const char * Unit::GetUnitID() {
-
-}
-/*
-const unsigned Unit::GetCredits() {
-
-}
-*/
-void Unit::SetUnitName(char * name) {
+    unitId = alteredUnitID;
+    name = alteredUnitName;
 
 }
 
-void Unit::SetUnitID(char * id) {
-
-}
-/*
-void Unit::SetCredits(unsigned cred) {
-
-}
-*/
-
-std::istream & operator >>(std::istream & input, Unit & unit)
+// Unfinished
+int Units::isCapital(char x)
 {
-    input >> unit.uName >> unit.uID >> unit.credits;
-    return input;
+    if (x >='A' && x <= 'Z'){
+        return 1;
+    } else {
+        return 0;
+    }
 }
-
-std::ostream & operator <<(std::ostream & os, const Unit & unit )
-{
-    os << "  UnitName:  " << unit.uName << '\n'
-       << "  Unit ID: " << unit.uID << '\n'
-       << "  Credits: " << unit.credits << '\n';
-    return os;
-}
-
