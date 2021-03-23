@@ -33,10 +33,12 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/Date.h" />
 		<Unit filename="include/Main.h" />
 		<Unit filename="include/Registration.h" />
 		<Unit filename="include/Result.h" />
 		<Unit filename="include/Unit.h" />
+		<Unit filename="src/Date.cpp" />
 		<Unit filename="src/Main.cpp" />
 		<Unit filename="src/Registration.cpp" />
 		<Unit filename="src/Result.cpp" />
