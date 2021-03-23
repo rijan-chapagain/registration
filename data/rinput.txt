@@ -1,0 +1,6 @@
+33564044 2 5
+ICT_MobileApp 376 4 99 30 September 2020
+BSC_Project 302 3 95 5 February 2021
+ICT_PrinciplesOfComputerScience 167 3 89 9 October 2019
+ICT_DataStructures&Abstractions 283 3 92 19 June 2021
+ICT_BusinessIntelligent 394 3 92 19 June 2020
