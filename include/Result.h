@@ -21,56 +21,59 @@ const unsigned MaxUnitResults = 10;
  * @class Result
  * @brief Manages all the results
  * 		  Manages Units and Dates objects
- * 
+ *
  * @bug This program does not have any known bugs
+ * @todo Change String array to Vector
+ * @todo Remove & from setters
+ * @todo Make Getter Const
  */
 class Result {
 
 public:
 	/**
 	 * @brief Construct a new Result object
-	 * 
+	 *
 	 */
 	Result();
-	
+
 	/**
 	 * @brief Get the Marks object
-	 * 
-	 * @return unsigned 
+	 *
+	 * @return unsigned
 	 */
 	unsigned GetMarks() const;
-	
+
 	/**
 	 * @brief Set the Marks object
-	 * 
-	 * @param mrks 
+	 *
+	 * @param mrks
 	 */
 	void SetMarks(unsigned& mrks);
 
 	/**
-	 * @brief Set the Credits object
-	 * 
-	 * @param credits 
-	 */
-    SetCredits(unsigned& credits);
-
-	/**
 	 * @brief Get the Credits object
-	 * 
-	 * @return const unsigned 
+	 *
+	 * @return const unsigned
 	 */
 	const unsigned GetCredits(int);
 
 	/**
+	 * @brief Set the Credits object
+	 *
+	 * @param credits
+	 */
+    SetCredits(unsigned& credits);
+
+	/**
 	 * @brief Get the Results Info object
-	 * 
+	 *
 	 */
 	void GetResultsInfo(int&, std::string&, std::string&, unsigned&, unsigned&, unsigned&, std::string&, unsigned&);
-   
+
 	/**
 	 * @brief Set the Results Info object
-	 * 
-	 * @param fileOutput 
+	 *
+	 * @param fileOutput
 	 */
     void SetResultsInfo(std::ofstream &fileOutput, int);
 
@@ -85,8 +88,8 @@ private:
 
 /**
  * @brief Get the marks object
- * 
- * @return unsigned 
+ *
+ * @return unsigned
  */
 inline unsigned Result::GetMarks() const
 {
@@ -95,8 +98,8 @@ inline unsigned Result::GetMarks() const
 
 /**
  * @brief Set the marks object
- * 
- * @param mrks 
+ *
+ * @param mrks
  */
 inline void Result::SetMarks(unsigned& mrks)
 {

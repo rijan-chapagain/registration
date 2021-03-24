@@ -19,54 +19,56 @@
 /**
  * @class Date
  * @brief Date class
- * 
+ *
  * @bug This program does not have any known bugs
+ * @todo Remove & from setters
+ * @todo Make Getter Const
  */
-class Date 
+class Date
 {
 public:
     /**
      * @brief Construct a new Date object
-     * 
+     *
      */
     Date();
-    
+
     /**
      * @brief Get the Day No object
-     * 
-     * @return unsigned 
+     *
+     * @return unsigned
      */
     unsigned GetDayNo();
-    
+
     /**
      * @brief Get the Month object
-     * 
-     * @return std::string 
+     *
+     * @return std::string
      */
     std::string GetMonth();
-    
+
     /**
      * @brief Get the Year No object
-     * 
-     * @return unsigned 
+     *
+     * @return unsigned
      */
     unsigned GetYearNo();
-    
+
     /**
      * @brief Set the Day No object
-     * 
+     *
      */
     void SetDayNo(unsigned& );
-    
+
     /**
      * @brief Set the Month object
-     * 
+     *
      */
     void SetMonth(std::string& );
-    
+
     /**
      * @brief Set the Year No object
-     * 
+     *
      */
     void SetYearNo(unsigned& );
 
@@ -79,7 +81,7 @@ private:
 
 /**
  * @brief Get the DayNo object that belongs to Date
- * 
+ *
  * @return unsigned day
  */
 inline unsigned Date::GetDayNo()
@@ -89,8 +91,8 @@ inline unsigned Date::GetDayNo()
 
 /**
  * @brief Set the DayNo object
- * 
- * @param d 
+ *
+ * @param d
  */
 inline void Date::SetDayNo(unsigned& d)
 {
@@ -99,8 +101,8 @@ inline void Date::SetDayNo(unsigned& d)
 
 /**
  * @brief Get the Month object
- * 
- * @return std::string 
+ *
+ * @return std::string
  */
 inline std::string Date::GetMonth()
 {
@@ -109,8 +111,8 @@ inline std::string Date::GetMonth()
 
 /**
  * @brief Set the Month object
- * 
- * @param m 
+ *
+ * @param m
  */
 inline void Date::SetMonth(std::string& m)
 {
@@ -119,8 +121,8 @@ inline void Date::SetMonth(std::string& m)
 
 /**
  * @brief Get the Year No object
- * 
- * @return unsigned 
+ *
+ * @return unsigned
  */
 inline unsigned Date::GetYearNo()
 {
@@ -129,8 +131,8 @@ inline unsigned Date::GetYearNo()
 
 /**
  * @brief Set the Year No object
- * 
- * @param y 
+ *
+ * @param y
  */
 inline void Date::SetYearNo(unsigned& y)
 {
