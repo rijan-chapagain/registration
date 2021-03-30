@@ -17,16 +17,32 @@
 Result::Result() = default;
 
 // for testing
-Result::SetCredits(unsigned& credits)
+void Result::SetCredits(unsigned credits)
 {
     units[0].SetCredits(credits);
     units[1].SetCredits(credits);
 }
 
-const unsigned Result::GetCredits(int count)
+unsigned Result::GetCredits(int count) const
 {
     return units[count].GetCredits();
 }
+
+unsigned Result::GetMarks() const
+{
+    return marks;
+}
+
+/**
+ * @brief Set the marks object
+ *
+ * @param mrks
+ */
+void Result::SetMarks(unsigned mrks)
+{
+    marks = mrks;
+}
+
 
 void Result::GetResultsInfo(int& count, std::string& name,
                     std::string& idUnit, unsigned& credits, unsigned& mrks, unsigned& day, std::string& month, unsigned& year)

@@ -21,7 +21,7 @@ Registration::Registration()
     count = 0;
 }
 
-const unsigned Registration::GetCredits()
+unsigned Registration::GetCredits() const
 {
     unsigned sum = 0;
     int count = GetCount();
@@ -29,6 +29,67 @@ const unsigned Registration::GetCredits()
         sum += results[i].GetCredits(i);
 
     return sum;
+}
+
+
+/**
+ * @brief Get the Count object
+ *
+ * @return const unsigned
+ */
+ unsigned Registration::GetCount() const
+{
+    return count;
+}
+
+/**
+ * @brief Set the count object
+ *
+ * @param ct
+ */
+ void Registration::SetCount(unsigned ct)
+{
+    count = ct;
+}
+
+/**
+ * @brief Get the student id object
+ *
+ * @return unsigned long
+ */
+ unsigned long Registration::GetStudentId() const
+{
+    return studentId;
+}
+
+/**
+ * @brief Set the student Id object
+ *
+ * @param id
+ */
+ void Registration::SetStudentId(unsigned long& id)
+{
+    studentId = id;
+}
+
+/**
+ * @brief Get the semester object
+ *
+ * @return unsigned int semester
+ */
+ unsigned int Registration::GetSemesters() const
+{
+    return semester;
+}
+
+/**
+ * @brief set the semesters object
+ *
+ * @param sems
+ */
+ void Registration::SetSemesters(unsigned sems)
+{
+    semester = sems;
 }
 
 void Registration::GetRegistrationInfoFromFile(std::ifstream &fileInputToRead)

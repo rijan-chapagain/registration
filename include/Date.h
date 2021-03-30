@@ -38,39 +38,39 @@ public:
      *
      * @return unsigned
      */
-    unsigned GetDayNo();
+    unsigned GetDayNo() const;
 
     /**
      * @brief Get the Month object
      *
      * @return std::string
      */
-    std::string GetMonth();
+    std::string GetMonth() const;
 
     /**
      * @brief Get the Year No object
      *
      * @return unsigned
      */
-    unsigned GetYearNo();
+    unsigned GetYearNo() const;
 
     /**
      * @brief Set the Day No object
      *
      */
-    void SetDayNo(unsigned& );
+    void SetDayNo(unsigned);
 
     /**
      * @brief Set the Month object
      *
      */
-    void SetMonth(std::string& );
+    void SetMonth(std::string);
 
     /**
      * @brief Set the Year No object
      *
      */
-    void SetYearNo(unsigned& );
+    void SetYearNo(unsigned);
 
 private:
 
@@ -78,65 +78,5 @@ private:
     std::string month;
     unsigned year;
 };
-
-/**
- * @brief Get the DayNo object that belongs to Date
- *
- * @return unsigned day
- */
-inline unsigned Date::GetDayNo()
-{
-    return day;
-}
-
-/**
- * @brief Set the DayNo object
- *
- * @param d
- */
-inline void Date::SetDayNo(unsigned& d)
-{
-    day = d;
-}
-
-/**
- * @brief Get the Month object
- *
- * @return std::string
- */
-inline std::string Date::GetMonth()
-{
-    return month;
-}
-
-/**
- * @brief Set the Month object
- *
- * @param m
- */
-inline void Date::SetMonth(std::string& m)
-{
-    month = m;
-}
-
-/**
- * @brief Get the Year No object
- *
- * @return unsigned
- */
-inline unsigned Date::GetYearNo()
-{
-    return year;
-}
-
-/**
- * @brief Set the Year No object
- *
- * @param y
- */
-inline void Date::SetYearNo(unsigned& y)
-{
-    year = y;
-}
 
 #endif // DATE_H

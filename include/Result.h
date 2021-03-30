@@ -48,21 +48,21 @@ public:
 	 *
 	 * @param mrks
 	 */
-	void SetMarks(unsigned& mrks);
+	void SetMarks(unsigned mrks);
 
 	/**
 	 * @brief Get the Credits object
 	 *
 	 * @return const unsigned
 	 */
-	const unsigned GetCredits(int);
+	unsigned GetCredits(int) const;
 
 	/**
 	 * @brief Set the Credits object
 	 *
 	 * @param credits
 	 */
-    SetCredits(unsigned& credits);
+    void SetCredits(unsigned credits);
 
 	/**
 	 * @brief Get the Results Info object
@@ -85,25 +85,5 @@ private:
 	unsigned count;
 
 };
-
-/**
- * @brief Get the marks object
- *
- * @return unsigned
- */
-inline unsigned Result::GetMarks() const
-{
-    return marks;
-}
-
-/**
- * @brief Set the marks object
- *
- * @param mrks
- */
-inline void Result::SetMarks(unsigned& mrks)
-{
-    marks = mrks;
-}
 
 #endif  //_RESULT_H

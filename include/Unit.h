@@ -36,7 +36,7 @@ public:
      * @brief Set the Credits object
      *
      */
-    void SetCredits(unsigned&);
+    void SetCredits(unsigned);
 
     /**
      * @brief Get the Credits object
@@ -102,68 +102,5 @@ private:
     std::string  ID_Unit;       // unit id type integer
     unsigned int  credits;       // number of credits
 };
-
-/**
- * @brief Set the Credits object that belongs to Units
- *
- * @param creditsInput
- * @return void
- */
-inline void Units::SetCredits(unsigned &creditsInput)
-{
-    credits = creditsInput;
-}
-
-/**
- * @brief Get the Credits object that belongs to Units
- *
- * @return unsigned credits
- */
-inline unsigned Units::GetCredits() const
-{
-    return credits;
-}
-
-/**
- * @brief Set the Unit id object that belongs to Units
- *
- * @param idUnit
- * @return void
- */
-inline void Units::SetID_Unit(std::string idUnit)
-{
-    ID_Unit = idUnit;
-}
-
-/**
- * @brief Get the Unit id object that belongs to Units
- *
- * @return std::string
- */
-inline std::string Units::GetIDUnit() const
-{
-    return ID_Unit;
-}
-
-/**
- * @brief Set the Name object that belongs to Units
- *
- * @param inputName
- * @return void
- */
-inline void Units::SetName(std::string inputName)
-{
-    name = inputName;
-}
-
-/**
- * @brief Get the Name object that belongs to Units
- *
- * @return std::string
- */
-inline std::string Units::GetName() const
-{
-    return name;
-}
 
 #endif  //_UNIT_H

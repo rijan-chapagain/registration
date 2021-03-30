@@ -14,6 +14,70 @@
 
 Units::Units() = default;
 
+
+/**
+ * @brief Set the Credits object that belongs to Units
+ *
+ * @param creditsInput
+ * @return void
+ */
+void Units::SetCredits(unsigned creditsInput)
+{
+    credits = creditsInput;
+}
+
+/**
+ * @brief Get the Credits object that belongs to Units
+ *
+ * @return unsigned credits
+ */
+unsigned Units::GetCredits() const
+{
+    return credits;
+}
+
+/**
+ * @brief Set the Unit id object that belongs to Units
+ *
+ * @param idUnit
+ * @return void
+ */
+void Units::SetID_Unit(std::string idUnit)
+{
+    ID_Unit = idUnit;
+}
+
+/**
+ * @brief Get the Unit id object that belongs to Units
+ *
+ * @return std::string
+ */
+std::string Units::GetIDUnit() const
+{
+    return ID_Unit;
+}
+
+/**
+ * @brief Set the Name object that belongs to Units
+ *
+ * @param inputName
+ * @return void
+ */
+void Units::SetName(std::string inputName)
+{
+    name = inputName;
+}
+
+/**
+ * @brief Get the Name object that belongs to Units
+ *
+ * @return std::string
+ */
+std::string Units::GetName() const
+{
+    return name;
+}
+
 void Units::CleanTheString(std::string& inputStr, const std::string &thisStr, const std::string &toBeReplaced)
 {
 

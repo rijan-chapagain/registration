@@ -42,20 +42,20 @@ public:
      *
      * @return const unsigned
      */
-	const unsigned GetCredits();
+	unsigned GetCredits() const;
 
     /**
      * @brief Get the Count object
      *
      * @return const unsigned
      */
-	const unsigned GetCount();
+	unsigned GetCount() const;
 
     /**
      * @brief Set the Count object
      *
      */
-    void SetCount(unsigned&);
+    void SetCount(unsigned);
 
     /**
      * @brief Get the Student Id object
@@ -82,7 +82,7 @@ public:
      * @brief Set the Semesters object
      *
      */
-    void SetSemesters(unsigned&);
+    void SetSemesters(unsigned);
 
     /**
      * @brief Get the Registration Info From File object
@@ -105,65 +105,5 @@ private:
 	unsigned count;
 	Result results[maxNo];
 };
-
-/**
- * @brief Get the Count object
- *
- * @return const unsigned
- */
-inline const unsigned Registration::GetCount()
-{
-    return count;
-}
-
-/**
- * @brief Set the count object
- *
- * @param ct
- */
-inline void Registration::SetCount(unsigned& ct)
-{
-    count = ct;
-}
-
-/**
- * @brief Get the student id object
- *
- * @return unsigned long
- */
-inline unsigned long Registration::GetStudentId() const
-{
-    return studentId;
-}
-
-/**
- * @brief Set the student Id object
- *
- * @param id
- */
-inline void Registration::SetStudentId(unsigned long& id)
-{
-    studentId = id;
-}
-
-/**
- * @brief Get the semester object
- *
- * @return unsigned int semester
- */
-inline unsigned int Registration::GetSemesters() const
-{
-    return semester;
-}
-
-/**
- * @brief set the semesters object
- *
- * @param sems
- */
-inline void Registration::SetSemesters(unsigned& sems)
-{
-    semester = sems;
-}
 
 #endif  //_REGISTRATION_H
